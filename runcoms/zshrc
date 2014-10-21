@@ -11,6 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+<<<<<<< HEAD
 
 # zsh settings
 source ~/.localrc
@@ -85,3 +86,5 @@ alias gbr="git browse" # open the Github link for the repo in your default brows
 alias hc="heroku create --stack cedar" # create the app on the Cedar stack on Heroku
 alias hp="heroku ps" # check the state of the app's processes on Heroku
 alias hl="heroku logs" # review the Heroku logs for more information
+=======
+>>>>>>> upstream/master
