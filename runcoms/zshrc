@@ -39,8 +39,8 @@ alias lsl="ls -AGl" # list all files and folders with permissions
 alias c="clear" # clear the display
 alias s="exec $SHELL" # reload shell
 
-alias show="defaults write com.apple.finder AppleShowAllFiles 1 && killall Finder" # show all hidden files in Finder
-alias hide="defaults write com.apple.Finder AppleShowAllFiles 0 && killall Finder" # hide all hideen files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder /System/Library/CoreServices/Finder.app" # show all hidden files in Finder
+alias hide="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder /System/Library/CoreServices/Finder.app" # hide all hideen files in Finder
 
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app" # open iPhone Simulator
 alias android="~/Documents/Code/android/sdk/tools/emulator -avd Nexus-7-4.2 &"
@@ -51,6 +51,7 @@ alias vimc="vim ~/.vimrc" # edit vim config in vim
 alias vimt="vim ~/.vim/colors/solarized.vim" # edit vim theme in vim
 alias zshc="vim ~/.zshrc" # edit zsh config in vim
 alias installc="vim ~/Documents/Code/private/install.sh" # edit install.sh script in vim
+alias hostc="sudo vim /etc/hosts" # edit hosts file in vim
 
 alias gi="git init" # initializes a directory as a git repository
 alias gl="git log --decorate --graph" # show commit history of a branch
@@ -82,6 +83,18 @@ alias gpsu="git push --set-upstream upstream $(current_branch)" # push your new 
 alias gpr="git pull-request" # open a pull request for the topic branch you just pushed
 alias gbr="git browse" # open the Github link for the repo in your default browser
 
-alias hc="heroku create --stack cedar" # create the app on the Cedar stack on Heroku
+alias hc="heroku create" # create the app on the Cedar stack on Heroku
 alias hp="heroku ps" # check the state of the app's processes on Heroku
 alias hl="heroku logs" # review the Heroku logs for more information
+
+alias rn="rails new" # create a new rails app
+alias rs="rails server" # start the rails server
+alias rc="rails console" # start the rails console
+alias rl="tail -f log/development.log" # tail the rails log file
+alias rg="rails generate" # generate generically in rails
+alias rgs="rails generate scaffold" # generate a scaffold in rails
+alias rgc="rails generate controller" # generate a controller in rails
+alias rgmo="rails generate model" # generate a model in rails
+alias rgmi="rails generate migration" # generate a migration in rails
+alias rdbm="rake db:migrate" # migrate the rails database using rake
+alias bi="bundle install" # install gems using bundle
