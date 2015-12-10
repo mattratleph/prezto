@@ -13,7 +13,6 @@ fi
 # Customize to your needs...
 
 # zsh settings
-source ~/.localrc
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 export EDITOR="vim"
@@ -98,3 +97,89 @@ alias rgmo="rails generate model" # generate a model in rails
 alias rgmi="rails generate migration" # generate a migration in rails
 alias rdbm="rake db:migrate" # migrate the rails database using rake
 alias bi="bundle install" # install gems using bundle
+
+# Update system and code
+function update {
+  # prezto
+  echo "\033[34mUpdating Prezto"
+  tput sgr0
+  cd ~/.zprezto
+  git pull && git submodule update --init --recursive
+  # homebrew
+  echo "\033[34mUpdating Homebrew"
+  tput sgr0
+  brew update
+  brew upgrade --all
+  brew cleanup
+  # ruby-gems
+  echo "\033[34mUpdating RubyGems"
+  tput sgr0
+  gem update --system
+  gem update
+  # heroku
+  echo "\033[34mUpdating Heroku"
+  tput sgr0
+  heroku update
+  # vim
+  echo "\033[34mUpdating Vim"
+  tput sgr0
+  cd ~/.vim/bundle/syntastic
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-airline
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-bufferline
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-bundler
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-coffee-script
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-colors-solarized
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-commentary
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-dispatch
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-fugitive
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-haml
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-heroku
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-less
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-markdown
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-mustache-handlebars
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-numbertoggle
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-pathogen
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-rails
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-rhubarb
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-vinegar
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ~
+  exec $SHELL
+}
