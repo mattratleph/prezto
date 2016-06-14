@@ -112,11 +112,17 @@ alias bi="bundle install" # install gems using bundle
 
 # Update system and code
 function update {
+  # hosts
+  echo "\033[34mUpdating Hosts"
+  tput sgr0
+  cd ~/Documents/Code/hosts
+  git pull upstream master
+  python updateHostsFile.py -a -r -e porn
   # prezto
   echo "\033[34mUpdating Prezto"
   tput sgr0
   cd ~/.zprezto
-  git pull && git submodule update --init --recursive
+  git pull upstream master && git submodule update --init --recursive
   # homebrew
   echo "\033[34mUpdating Homebrew"
   tput sgr0
