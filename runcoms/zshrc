@@ -26,6 +26,14 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+function gpge() {
+  gpg -s -e -r $3 -o $2 $1
+}
+
+function gpgd() {
+  gpg -d -o $2 $1
+}
+
 # aliases
 eval "$(hub alias -s)"
 
@@ -37,6 +45,7 @@ alias ls="ls -AG" # list all files and folders
 alias lsl="ls -AGl" # list all files and folders with permissions
 alias c="clear" # clear the display
 alias s="exec $SHELL" # reload shell
+alias flushdns="sudo killall -HUP mDNSResponder"
 
 alias show="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder /System/Library/CoreServices/Finder.app" # show all hidden files in Finder
 alias hide="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder /System/Library/CoreServices/Finder.app" # hide all hideen files in Finder
@@ -86,6 +95,9 @@ alias hc="heroku create" # create the app on the Cedar stack on Heroku
 alias hp="heroku ps" # check the state of the app's processes on Heroku
 alias hl="heroku logs" # review the Heroku logs for more information
 
+alias dodl="doctl compute droplet list" # list DigitalOcean droplets
+alias dossh="doctl compute ssh" # ssh to named DigitalOcean droplet
+
 alias rn="rails new" # create a new rails app
 alias rs="rails server" # start the rails server
 alias rc="rails console" # start the rails console
@@ -116,6 +128,7 @@ function update {
   tput sgr0
   gem update --system
   gem update
+  gem cleanup
   # heroku
   echo "\033[34mUpdating Heroku"
   tput sgr0
@@ -127,6 +140,9 @@ function update {
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
   cd ../vim-airline
+  git fetch origin
+  git merge --no-ff -m "Merging remote changes into local branch." origin/master
+  cd ../vim-airline-themes
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
   cd ../vim-bufferline
