@@ -38,7 +38,7 @@ function gpgd() {
 eval "$(hub alias -s)"
 
 alias ~="cd ~" # go to home folder
-alias code="cd ~/Documents/Code" # go to code folder
+alias code="cd ~/Code" # go to code folder
 alias sites="cd ~/Sites" # go to sites folder
 
 alias ls="ls -AG" # list all files and folders
@@ -51,14 +51,14 @@ alias show="defaults write com.apple.finder AppleShowAllFiles YES && killall Fin
 alias hide="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder /System/Library/CoreServices/Finder.app" # hide all hideen files in Finder
 
 alias iphone="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app" # open iPhone Simulator
-alias android="~/Documents/Code/android/sdk/tools/emulator -avd Nexus-7-4.2 &"
+alias android="~/Code/android/sdk/tools/emulator -avd Nexus-7-4.2 &"
 
 alias gitc="vim ~/.gitconfig" # edit git config in vim
 alias giti="vim ~/.gitignore_global" # edit global git ignore in vim
 alias vimc="vim ~/.vimrc" # edit vim config in vim
 alias vimt="vim ~/.vim/colors/solarized.vim" # edit vim theme in vim
 alias zshc="vim ~/.zshrc" # edit zsh config in vim
-alias installc="vim ~/Documents/Code/private/install.sh" # edit install.sh script in vim
+alias installc="vim ~/Code/private/install.sh" # edit install.sh script in vim
 alias hostc="sudo vim /etc/hosts" # edit hosts file in vim
 
 alias gi="git init" # initializes a directory as a git repository
@@ -179,9 +179,6 @@ function update {
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
   cd ../vim-mustache-handlebars
-  git fetch origin
-  git merge --no-ff -m "Merging remote changes into local branch." origin/master
-  cd ../vim-numbertoggle
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
   cd ../vim-pathogen
