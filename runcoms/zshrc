@@ -121,7 +121,7 @@ function update {
   echo "\033[34mUpdating Homebrew"
   tput sgr0
   brew update
-  brew upgrade --all
+  brew upgrade
   brew cleanup
   # ruby-gems
   echo "\033[34mUpdating RubyGems"
