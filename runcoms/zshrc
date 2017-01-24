@@ -172,9 +172,6 @@ function update {
   cd ../vim-heroku
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
-  cd ../vim-less
-  git fetch origin
-  git merge --no-ff -m "Merging remote changes into local branch." origin/master
   cd ../vim-markdown
   git fetch origin
   git merge --no-ff -m "Merging remote changes into local branch." origin/master
