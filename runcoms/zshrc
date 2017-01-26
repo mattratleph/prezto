@@ -40,6 +40,7 @@ eval "$(hub alias -s)"
 alias ~="cd ~" # go to home folder
 alias code="cd ~/Code" # go to code folder
 alias sites="cd ~/Sites" # go to sites folder
+alias work="cd ~/Crossway" # go to sites folder
 
 alias ls="ls -AG" # list all files and folders
 alias lsl="ls -AGl" # list all files and folders with permissions
