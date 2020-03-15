@@ -103,9 +103,6 @@ alias hc="heroku create" # create the app on the Cedar stack on Heroku
 alias hp="heroku ps" # check the state of the app's processes on Heroku
 alias hl="heroku logs" # review the Heroku logs for more information
 
-alias dodl="doctl compute droplet list" # list DigitalOcean droplets
-alias dossh="doctl compute ssh" # ssh to named DigitalOcean droplet
-
 alias rn="rails new" # create a new rails app
 alias rs="rails server" # start the rails server
 alias rc="rails console" # start the rails console
