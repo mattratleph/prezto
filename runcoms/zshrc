@@ -21,6 +21,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/git/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -42,8 +43,6 @@ function gpgd() {
 }
 
 # aliases
-eval "$(hub alias -s)"
-
 alias ~="cd ~" # go to home folder
 alias code="cd ~/Code" # go to code folder
 alias sites="cd ~/Sites" # go to sites folder
@@ -96,8 +95,6 @@ alias gpo="git push origin $(current_branch)" # push your new data to origin
 alias gpso="git push --set-upstream origin $(current_branch)" # push your new data to origin
 alias gpu="git push upstream $(current_branch)" # push your new data to upstream
 alias gpsu="git push --set-upstream upstream $(current_branch)" # push your new data to upstream
-alias gpr="git pull-request" # open a pull request for the topic branch you just pushed
-alias gbr="git browse" # open the Github link for the repo in your default browser
 
 alias hc="heroku create" # create the app on the Cedar stack on Heroku
 alias hp="heroku ps" # check the state of the app's processes on Heroku
